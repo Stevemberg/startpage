@@ -1,0 +1,60 @@
+:root{
+    --base-text-color : #00f9ff;
+    --base-font-family : 'Open Sans', sans-serif;
+}
+body{
+    background-color: #24273a;
+    background-image: url('../img/wallpaper.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(1px) brightness(20%);
+    font-family: var(--base-font-family);
+}
+#content{
+    border-top: 2px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom:0px;
+    border-style: solid;
+    border-color:#00f9ff;
+    width: 70%;
+    margin: auto;
+}
+
+#title-startpage{
+    color: white;
+}
+
+#clock{
+    font-size: 16px;
+}
+#date-extend{
+}
+#date{
+}
+
+.purple-border{
+    border-style: solid;
+    border-color: var(--base-text-color);
+    border-radius: 10px;
+    border-width: 2px;
+}
+
+.purple-text{
+    color: var(--base-text-color);
+}
+
+.panel-body{
+    background-color: #ffffff0e;
+    border-radius: 10px;
+    color: var(--base-text-color);
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.clock-panel{
+    color: var(--base-text-color);
+    font-size: 12px;
+    text-transform: uppercase;
+}
