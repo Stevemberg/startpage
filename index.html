@@ -10,69 +10,88 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/live.js"></script>
     <script src="js/script.js"></script>
-    <title>Startpage</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+
+    <!-- <link rel="icon" href="animated_favicon.gif" type="image/gif" >-->
+    <title>Startpage</title>
 
 </head>
 
 <body>
-    <br>
-    <br>
     <div id="content">
-        <div class="clock-panel text-start">
-            <span id="date-extend"></span>
-            <span id="clock"></span>
-            <span class="float-end" id="date"></span>
-        </div>
-
-        <div class="row py-4">
-            <div class="col text-start">
-                <span class="fs-1 fw-bolder" id="title-startpage">Personal Startpage</span>
+        <div class="row justify-content-center mx-0">
+            <div class="clock-panel text-start px-0">
+                <span id="date-extend"></span>
+                <span id="clock"></span>
+                <span class="float-end" id="date"></span>
             </div>
-        </div>
-
-        <div class="row">
-            <div class="offset-3 col-6">
-                <div class="row justify-content-center">
-                    <div class="col-md-3 col-sm-12 mx-1">
-                        <div class="row">
-                            <div class="col-12 purple-border p-0">
-                                <p class="purple-text h5 my-3 text-center">SERVICES</p>
-                                <div class="panel-body my-1 py-3 fs-6 align-middle text-center">
-                                    <p class="m-0">Bookstack</p>
-                                    <p class="m-0">PhpMyAdmin</p>
-                                </div>
-                            </div>
+            <div class="row py-4 px-0">
+                <div class="col text-start p-0 align-middle">
+                    <div class="fs-1 fw-bolder d-inline" id="title-startpage">Personal Startpage</div>
+                    <div class="float-end">
+                        <div id="weather-icon" class="d-inline"></div>
+                        <div id="weather-info" class="row mx-0 d-inline-block align-middle">
+                            <div id="weather-temp" class="px-0 col-12"></div>
+                            <div id="weather-humi" class="px-0 col-12"></div>
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-12 mx-1">
-                        <div class="row">
-                            <div class="col-12 purple-border p-0">
-                                <p class="purple-text h5 my-3 text-center">SHORTCUT</p>
-                                <div class="panel-body my-1 py-3 fs-6 align-middle text-center">
-                                    <p class="m-0">Gmail</p>
-                                    <p class="m-0">IFunny</p>
-                                    <p class="m-0">Selfhosted</p>
-                                    <p class="m-0">Starpages</p>
-                                </div>
-                            </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-12">
+                <div class="row">
+                    <div class="col-12 p-0">
+                        <p class="panel-title h5  ">SERVICES</p>
+                        <div class="panel-body pt-3 align-middle">
+                            <p class="m-0">Bookstack</p>
+                            <p class="m-0">PhpMyAdmin</p>
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-12 mx-1">
-                        <div class="row">
-                            <div class="col-12 purple-border p-0">
-                                <p class="purple-text h5 my-3 text-center">INTRA</p>
-                                <div class="panel-body my-1 py-3 fs-6 align-middle text-center">
-                                    <p class="m-0">Cardápio</p>
-                                    <p class="m-0">Zimbra</p>
-                                    <p class="m-0">EEAR</p>
-                                    <p class="m-0">CA</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-12">
+                <div class="row">
+                    <div class="col-12 p-0">
+                        <p class="panel-title h5  ">SHORTCUT</p>
+                        <div class="panel-body pt-3 align-middle ">
+                            <p class="m-0">Gmail</p>
+                            <p class="m-0">IFunny</p>
+                            <p class="m-0">Selfhosted</p>
+                            <p class="m-0">Starpages</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-12">
+                <div class="row">
+                    <div class="col-12 p-0">
+                        <p class="panel-title h5  ">INTRA</p>
+                        <div class="panel-body pt-3 align-middle ">
+                            <p class="m-0">Cardápio</p>
+                            <p class="m-0">Zimbra</p>
+                            <p class="m-0">EEAR</p>
+                            <p class="m-0">CA</p>
 
-                                </div>
-                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-12">
+                <div class="row">
+                    <div class="col-12 p-0">
+                        <p class="panel-title h5  ">INTRA</p>
+                        <div class="panel-body pt-3 align-middle ">
+                            <p class="m-0">Cardápio</p>
+                            <p class="m-0">Zimbra</p>
+                            <p class="m-0">EEAR</p>
+                            <p class="m-0">CA</p>
+
                         </div>
                     </div>
                 </div>
@@ -80,4 +99,5 @@
         </div>
     </div>
 </body>
+
 </html>

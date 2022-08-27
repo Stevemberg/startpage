@@ -10,6 +10,7 @@ body{
     background-position: center;
     backdrop-filter: blur(1px) brightness(20%);
     font-family: var(--base-font-family);
+    padding-top: 5%;
 }
 #content{
     border-top: 2px;
@@ -29,28 +30,33 @@ body{
 #clock{
     font-size: 16px;
 }
-#date-extend{
-}
-#date{
-}
 
-.purple-border{
+#weather-info{
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+}
+#weather-temp{
+    border-bottom: 2px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-color: white;
     border-style: solid;
-    border-color: var(--base-text-color);
-    border-radius: 10px;
-    border-width: 2px;
 }
 
-.purple-text{
+.base-text{
+    color: var(--base-text-color);
+    font-family: var(--base-font-family);
+}
+
+.panel-title{
     color: var(--base-text-color);
 }
 
 .panel-body{
-    background-color: #ffffff0e;
-    border-radius: 10px;
-    color: var(--base-text-color);
-    margin-left: 5px;
-    margin-right: 5px;
+    font-size: 12px;
+    color: white;
 }
 
 .clock-panel{
