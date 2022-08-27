@@ -22,7 +22,7 @@ a:hover{
 }
 
 #content{
-    border-top: 2px;
+    border-top: 1px;
     border-left: 0px;
     border-right: 0px;
     border-bottom:0px;
@@ -37,21 +37,32 @@ a:hover{
 }
 
 #clock{
-    font-size: 16px;
+    font-size: 14px;
 }
 
 #weather-info{
     color: white;
     font-size: 15px;
-    font-weight: 700;
+    font-weight: 600;
 }
 #weather-temp{
-    border-bottom: 2px;
+    border-bottom: 1px;
     border-top: 0;
     border-left: 0;
     border-right: 0;
     border-color: white;
     border-style: solid;
+}
+#countdown{
+    color: white;
+    font-size: 20px;
+    position: fixed;
+    bottom: 0;
+}
+#countdown-number{
+    font-family: 'Seven Segment', sans-serif;
+    font-weight: 900;
+    color: var(--base-text-color);
 }
 
 .base-text{

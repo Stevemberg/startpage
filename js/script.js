@@ -1,48 +1,53 @@
-const startTime = () => {
-    let mes = [
-        "Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"
-    ]
-    let dia = [
-        "Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"
-    ]
+let mes = [
+    "Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"
+]
+let dia = [
+    "Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"
+]
 
-    
-    
-    $.get("https://worldtimeapi.org/api/ip", (status, data) => {
-        let today = null;
-        if (data.toString() === 'success') {
-            today = new Date(status.datetime);
-        }else{
-            today = new Date();
-            console.log("Error API timezone");
-        }
-        makeDate(today);
-    });
+const makeDate = (today) => {
+    let hour = today.getHours().toString().padStart(2, "0");
+    let min = today.getMinutes().toString().padStart(2, "0");
+    let sec = today.getSeconds().toString().padStart(2, "0");
+    let month = mes[today.getMonth()];
+    let day = dia[today.getDay()];
 
-    const makeDate = (today) => {
-        let hour = today.getHours().toString().padStart(2, "0");
-        let min = today.getMinutes().toString().padStart(2, "0");
-        let sec = today.getSeconds().toString().padStart(2, "0");
-        let month = mes[today.getMonth()];
-        let day = dia[today.getDay()];
-
-        document.getElementById('date-extend').innerHTML = day + ", " + today.getDate() + " " + month + " " + today.getFullYear();
-        document.getElementById('date').innerHTML = new Date().toLocaleDateString().replace("/20", "/");
-        document.getElementById('clock').innerHTML = "&nbsp&nbsp" + hour + ":" + min;
-        setTimeout(startTime, 1000);
-    }
+    document.getElementById('date-extend').innerHTML = day + ", " + today.getDate() + " " + month + " " + today.getFullYear();
+    document.getElementById('date').innerHTML = new Date().toLocaleDateString().replace("/20", "/");
+    document.getElementById('clock').innerHTML = "&nbsp&nbsp" + hour + ":" + min;
 }
 
-const greetingMessage = () => {
-    let h = new Date().getHours();
-    function message() {
+const greetingMessage = (h) => {
+    function message(h) {
         if (h <= 5) return 'Boa madrugada';
         if (h < 12) return 'Bom dia';
         if (h < 18) return 'Boa tarde';
         return 'Boa noite';
     }
-    document.getElementById('title-startpage').innerHTML = message() + " !";
+    document.getElementById('title-startpage').innerHTML = message(h.getHours()) + " !";
 
+}
+
+const countdown = (today) => {
+    let end = new Date(2022,10,25);
+    let days = Math.ceil( (end - today) / (1000 * 60 * 60 * 24) );
+    $("#countdown-number").html(days);
+}
+
+const startTimer = () => {
+    $.get("https://worldtimeapi.org/api/ip", (status, data) => {
+        let today = null;
+        if (data.toString() === 'success') {
+            today = new Date(status.datetime);
+        } else {
+            today = new Date();
+            console.log("Error API timezone");
+        }
+        makeDate(today);
+        greetingMessage(today);
+        countdown(today);
+        setTimeout(startTimer, 5000);
+    });
 }
 
 const weather = () => {
@@ -67,10 +72,8 @@ const weather = () => {
 
 }
 
-
 const start = () => {
-    startTime();
-    greetingMessage();
+    startTimer();
     weather();
 
 }
