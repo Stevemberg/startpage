@@ -8,7 +8,7 @@ const startTime = () => {
 
     
     
-    $.get("http://worldtimeapi.org/api/ip", (status, data) => {
+    $.get("https://worldtimeapi.org/api/ip", (status, data) => {
         let today = null;
         if (data.toString() === 'success') {
             today = new Date(status.datetime);
